@@ -33,10 +33,55 @@
                 <li>Counting your total notes</li>
             </ul>
         </section>
+
+        <section>
+            <h2>Keyboard Shortcuts</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Action</th>
+                        <th scope="col">Shortcut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Add Note</td>
+                        <td><kbd>Enter</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Clear Field</td>
+                        <td><kbd>Esc</kbd></td>
+                    </tr>
+                    <tr>
+                        <td>Navigate Links</td>
+                        <td><kbd>Tab</kbd></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Feedback</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="feedback-name">Name:</label>
+                    <input type="text" id="feedback-name" name="name" required>
+                </div>
+                <div>
+                    <label for="feedback-email">Email:</label>
+                    <input type="email" id="feedback-email" name="email" required>
+                </div>
+                <div>
+                    <label for="feedback-message">Message:</label>
+                    <textarea id="feedback-message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Quick Notes. Build during web foundations.</p>
+        <p>&copy; 2026 Quick Notes. Built during web foundations.</p>
     </footer>
     
 </body>
