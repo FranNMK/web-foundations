@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuickNotes interactive character and word counter with theme switching and draft persistence.">
+  <title>Notes Toolkit - Day 4 Note Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="header-content">
+        <div class="header-brand">
+          <span class="brand-badge">Day 4</span>
+          <h1>Note Editor</h1>
+        </div>
+        <button id="theme-toggle" class="btn btn-theme" type="button" aria-label="Toggle theme">Dark mode</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="editor-card">
+        <div class="editor-header">
+          <label for="note-text" class="editor-label">Write your note:</label>
+        </div>
+
+        <textarea 
+          id="note-text" 
+          placeholder="Start typing your note here... (auto-saved to draft)" 
+          rows="8"
+          spellcheck="true"
+        ></textarea>
+
+        <div class="metrics-bar">
+          <div class="counters-group">
+            <p id="char-count" class="counter-item">0 / 200 characters</p>
+            <span class="counter-divider" aria-hidden="true">•</span>
+            <p id="word-count" class="counter-item">0 words</p>
+          </div>
+          <div class="actions-group">
+            <button id="clear-btn" class="btn btn-clear" type="button">Clear</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p class="shortcut-hint">Tip: Press <kbd>Esc</kbd> inside the textarea or click Clear to empty your note.</p>
+    </footer>
+  </div>
+</body>
+</html>

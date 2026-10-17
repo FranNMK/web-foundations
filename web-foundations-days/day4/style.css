@@ -1,0 +1,372 @@
+/* ==========================================================================
+   CSS Variables & Theme Definitions
+   ========================================================================== */
+:root {
+  /* Surface & Background */
+  --bg-gradient: radial-gradient(circle at 15% 15%, #f1f5f9 0%, #e2e8f0 100%);
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+
+  /* Typography */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-label: #334155;
+
+  /* Form Elements */
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-focus-border: #3b82f6;
+  --input-focus-ring: rgba(59, 130, 246, 0.2);
+
+  /* Buttons */
+  --btn-theme-bg: #f1f5f9;
+  --btn-theme-text: #1e293b;
+  --btn-theme-border: #cbd5e1;
+  --btn-theme-hover-bg: #e2e8f0;
+
+  --btn-clear-bg: #ef4444;
+  --btn-clear-text: #ffffff;
+  --btn-clear-hover-bg: #dc2626;
+
+  /* Metric Badges & Dividers */
+  --counter-bg: #f8fafc;
+  --counter-border: #e2e8f0;
+  --counter-text: #475569;
+  --divider-color: #cbd5e1;
+
+  /* Warning & Over Status Colours */
+  --warning-color: orange;
+  --over-color: red;
+
+  /* Footer & Badges */
+  --badge-bg: #e0f2fe;
+  --badge-text: #0284c7;
+  --kbd-bg: #e2e8f0;
+  --kbd-text: #334155;
+  --kbd-border: #cbd5e1;
+}
+
+/* Dark theme redefines only the CSS variables */
+body.dark {
+  --bg-gradient: radial-gradient(circle at 15% 15%, #0f172a 0%, #020617 100%);
+  --bg-color: #0b0f19;
+  --card-bg: #111827;
+  --card-border: #1f2937;
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-label: #e2e8f0;
+
+  --input-bg: #1e293b;
+  --input-border: #334155;
+  --input-focus-border: #60a5fa;
+  --input-focus-ring: rgba(96, 165, 250, 0.25);
+
+  --btn-theme-bg: #1e293b;
+  --btn-theme-text: #f8fafc;
+  --btn-theme-border: #334155;
+  --btn-theme-hover-bg: #334155;
+
+  --btn-clear-bg: #dc2626;
+  --btn-clear-text: #ffffff;
+  --btn-clear-hover-bg: #b91c1c;
+
+  --counter-bg: #1e293b;
+  --counter-border: #334155;
+  --counter-text: #94a3b8;
+  --divider-color: #475569;
+
+  --warning-color: #fb923c; /* Bright Orange in Dark Mode */
+  --over-color: #f87171;    /* Vibrant Red in Dark Mode */
+
+  --badge-bg: #0c4a6e;
+  --badge-text: #38bdf8;
+  --kbd-bg: #334155;
+  --kbd-text: #e2e8f0;
+  --kbd-border: #475569;
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-gradient);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+/* ==========================================================================
+   Layout Structure
+   ========================================================================== */
+.app-wrapper {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   Header Component
+   ========================================================================== */
+.app-header {
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-theme {
+  background-color: var(--btn-theme-bg);
+  color: var(--btn-theme-text);
+  border-color: var(--btn-theme-border);
+}
+
+.btn-theme:hover {
+  background-color: var(--btn-theme-hover-bg);
+}
+
+.btn-clear {
+  background-color: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+.btn-clear:hover {
+  background-color: var(--btn-clear-hover-bg);
+}
+
+/* ==========================================================================
+   Card & Editor Form
+   ========================================================================== */
+.editor-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editor-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-label);
+  transition: color 0.3s ease;
+}
+
+textarea#note-text {
+  width: 100%;
+  min-height: 160px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+textarea#note-text:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+textarea#note-text::placeholder {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Metrics Bar & Counter Classes
+   ========================================================================== */
+.metrics-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.counters-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--counter-bg);
+  border: 1px solid var(--counter-border);
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-item {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--counter-text);
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.counter-divider {
+  color: var(--divider-color);
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+/* Required classes for warning (orange text) and over (red, bold text) */
+.warning,
+#char-count.warning {
+  color: orange;
+  color: var(--warning-color);
+}
+
+.over,
+#char-count.over {
+  color: red;
+  color: var(--over-color);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Footer & Keyboard Hint
+   ========================================================================== */
+.app-footer {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.shortcut-hint {
+  margin: 0;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--kbd-bg);
+  color: var(--kbd-text);
+  border: 1px solid var(--kbd-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 520px) {
+  .app-wrapper {
+    padding: 24px 16px;
+  }
+
+  .metrics-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .counters-group {
+    justify-content: center;
+  }
+
+  .actions-group {
+    display: flex;
+  }
+
+  .btn-clear {
+    width: 100%;
+  }
+}
