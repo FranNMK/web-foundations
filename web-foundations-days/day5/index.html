@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Day 5 asynchronous DOM application that loads and filters user data from JSONPlaceholder REST API.">
+  <title>User Directory - Day 5 REST API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="users.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <header class="app-header">
+      <div class="badge">Day 5 • REST API & DOM</div>
+      <h1 class="main-title">User Directory</h1>
+      <p class="subtitle">Asynchronously load user records from a RESTful API and filter them dynamically in real time.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="controls-card" aria-label="Directory Controls">
+        <div class="controls-row">
+          <button id="load-users" type="button" class="btn btn-primary">Load Users</button>
+
+          <div class="filter-group">
+            <label for="filter-input" class="filter-label">Filter by name:</label>
+            <input 
+              type="text" 
+              id="filter-input" 
+              class="filter-input" 
+              placeholder="Type a name to filter..." 
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <div class="status-wrapper">
+          <p id="status" class="status-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="users-section" aria-label="Users Catalog">
+        <ul id="users-list" class="users-list"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Data provided by <a href="https://jsonplaceholder.typicode.com/users" target="_blank" rel="noopener noreferrer">JSONPlaceholder REST API</a></p>
+    </footer>
+  </div>
+</body>
+</html>
